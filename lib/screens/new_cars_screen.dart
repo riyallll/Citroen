@@ -14,45 +14,45 @@ class NewCarsScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: const AppBarWidget(),
-        body: Column(
-          children: [
-            /// Top-right icon
-            Align(
-              alignment: Alignment.centerRight,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 16.0, bottom: 16.0, right: 40.0),
-                child: Image.asset(
-                  'assets/images/Asset1xhdpi2.png',
-                  height: 80,
-                  width: 80,
-                ),
-              ),
-            ),
-
-            /// Header title
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 60.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'NEW CARS',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              /// Top-right icon
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 16.0, bottom: 16.0, right: 40.0),
+                  child: Image.asset(
+                    'assets/images/Asset1xhdpi2.png',
+                    height: 80,
+                    width: 80,
                   ),
                 ),
               ),
-            ),
 
-            const SizedBox(height: 50),
+              /// Header title
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 60.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'NEW CARS',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
 
-            /// Content
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50),
+              const SizedBox(height: 50),
+
+              /// Content
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     /// Left Column
                     Expanded(
@@ -71,6 +71,7 @@ class NewCarsScreen extends StatelessWidget {
                     /// Right Column
                     Expanded(
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: List.generate(3, (index) {
                           final item = carItems[index + 3];
                           return CarItemTile(item: item);
@@ -80,21 +81,23 @@ class NewCarsScreen extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
 
-            /// Bottom right icon
-            Align(
-              alignment: Alignment.centerRight,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 16.0, bottom: 30.0, right: 40.0),
-                child: Image.asset(
-                  'assets/images/Asset12xhdpi.png',
-                  height: 25,
-                  width: 25,
+              const SizedBox(height: 30),
+
+              /// Bottom right icon
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 30.0, right: 40.0),
+                  child: Image.asset(
+                    'assets/images/Asset12xhdpi.png',
+                    height: 25,
+                    width: 25,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
