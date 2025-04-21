@@ -9,7 +9,7 @@ class VerticalDividerWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 0),
       child: Image.asset(
         'assets/images/line 2xhdpi.png',
-        height: 650,
+        height: 450,
         width: 80,
       ),
     );
